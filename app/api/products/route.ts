@@ -1,21 +1,29 @@
 import { NextResponse } from "next/server";
-import prisma from "@/lib/prisma";
-import { z } from "zod";
 
-const productSchema = z.object({
-    name: z.string().min(2, "Name must be at least 2 characters"),
-    description: z.string().optional(),
-    price: z.number().positive("Price must be a positive number"),
-    userId: z.string().cuid(),
-});
+// Sample mock data now that Prisma is removed
+const mockProducts = [
+    {
+        id: "1",
+        name: "Bullet Dori",
+        description: "High-quality bullet dori for industrial use.",
+        price: 150.0,
+        user: { name: "Admin", email: "admin@example.com" },
+        createdAt: new Date().toISOString(),
+    },
+    {
+        id: "2",
+        name: "Polyester Yarn",
+        description: "Strong and durable polyester yarn.",
+        price: 200.0,
+        user: { name: "Admin", email: "admin@example.com" },
+        createdAt: new Date().toISOString(),
+    },
+];
 
 export async function GET() {
     try {
-        const products = await prisma.product.findMany({
-            include: { user: { select: { name: true, email: true } } },
-            orderBy: { createdAt: "desc" },
-        });
-        return NextResponse.json(products);
+        // Returning mock data
+        return NextResponse.json(mockProducts);
     } catch (error) {
         console.error("[PRODUCTS_GET]", error);
         return new NextResponse("Internal Error", { status: 500 });
@@ -24,18 +32,15 @@ export async function GET() {
 
 export async function POST(req: Request) {
     try {
+        // In a production app without an ORM, you would handle DB connections here directly or via another library.
+        // For now, we simulate a successful creation.
         const body = await req.json();
-        const validatedData = productSchema.parse(body);
 
-        const product = await prisma.product.create({
-            data: validatedData,
+        return NextResponse.json({
+            message: "Product creation simulated (Prisma removed)",
+            received: body
         });
-
-        return NextResponse.json(product);
     } catch (error) {
-        if (error instanceof z.ZodError) {
-            return NextResponse.json(error.issues, { status: 400 });
-        }
         console.error("[PRODUCTS_POST]", error);
         return new NextResponse("Internal Error", { status: 500 });
     }
