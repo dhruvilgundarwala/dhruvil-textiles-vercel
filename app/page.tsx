@@ -56,7 +56,7 @@ export default function Home() {
 
             <FadeIn delay={0.8} direction="up">
               <p className="text-lg md:text-xl text-white/70 mb-12 max-w-2xl mx-auto leading-relaxed font-light">
-                Crafting the finest Bullet Dori and Yarns for the world's leading textile artisans. Our Bullet Dori is used in embroidery thread.
+                Crafting the finest Bullet Dori and Yarns for the world&apos;s leading textile artisans. Our Bullet Dori is used in embroidery thread.
               </p>
               <div className="flex flex-col sm:flex-row gap-6 justify-center items-center">
                 <Button size="lg" variant="primary" asChild className="min-w-[180px]">
@@ -154,7 +154,7 @@ export default function Home() {
             </Reveal>
             <Reveal delay={0.2}>
               <h2 className="text-3xl md:text-5xl font-serif leading-tight max-w-4xl mx-auto mb-10">
-                "Quality is not an act, it is a habit. We have been weaving trust into every thread since 1997."
+                &quot;Quality is not an act, it is a habit. We have been weaving trust into every thread since 1997.&quot;
               </h2>
             </Reveal>
             <Reveal delay={0.4}>

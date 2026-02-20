@@ -51,10 +51,10 @@ export default function AboutPage() {
                             <Reveal delay={0.4}>
                                 <div className="border-l-2 border-secondary pl-8 py-4 my-10 relative">
                                     <p className="italic text-xl text-primary font-serif leading-relaxed">
-                                        "Trust is our first priority. We believe in building long-term relationships through consistent quality."
+                                        &quot;Trust is our first priority. We believe in building long-term relationships through consistent quality.&quot;
                                     </p>
                                     <p className="text-xs text-neutral-400 font-bold uppercase tracking-widest mt-6">
-                                        — Manish Ishwarlal Gundarwala, Founder
+                                        &mdash; Manish Ishwarlal Gundarwala, Founder
                                     </p>
                                 </div>
                             </Reveal>
@@ -71,9 +71,9 @@ export default function AboutPage() {
                     </div>
                     <div className="grid md:grid-cols-3 gap-12">
                         {[
-                            { title: "Quality First", desc: "We never compromise on raw materials, ensuring high-tenacity and durability in every spool.", icon: Award },
-                            { title: "Customer Focused", desc: "We offer customization in colors and specifications to meet unique client needs.", icon: Users },
-                            { title: "Innovation", desc: "Continuously upgrading our manual and semi-auto processes to improve efficiency.", icon: Target },
+                            { title: 'Quality First', desc: 'We never compromise on raw materials, ensuring high-tenacity and durability in every spool.', icon: Award },
+                            { title: 'Customer Focused', desc: 'We offer customization in colors and specifications to meet unique client needs.', icon: Users },
+                            { title: 'Innovation', desc: 'Continuously upgrading our manual and semi-auto processes to improve efficiency.', icon: Target },
                         ].map((value, i) => (
                             <Reveal key={i} delay={i * 0.15}>
                                 <div className="text-center group p-6 hover:bg-[#F9F9F8] transition-colors rounded-sm h-full">
