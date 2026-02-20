@@ -1,7 +1,38 @@
 {
-  "buildCommand": "npm install && npm run build",
+  "buildCommand": "npx prisma generate && next build",
   "installCommand": "npm install --legacy-peer-deps",
+  "framework": "nextjs",
+  "regions": [
+    "sfo1"
+  ],
   "env": {
     "NEXT_TELEMETRY_DISABLED": "1"
-  }
+  },
+  "headers": [
+    {
+      "source": "/(.*)",
+      "headers": [
+        {
+          "key": "X-Content-Type-Options",
+          "value": "nosniff"
+        },
+        {
+          "key": "X-Frame-Options",
+          "value": "DENY"
+        },
+        {
+          "key": "X-XSS-Protection",
+          "value": "1; mode=block"
+        },
+        {
+          "key": "Referrer-Policy",
+          "value": "strict-origin-when-cross-origin"
+        },
+        {
+          "key": "Content-Security-Policy",
+          "value": "default-src 'self'; script-src 'self' 'unsafe-inline' 'unsafe-eval' https://va.vercel-scripts.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; img-src 'self' blob: data: https:; font-src 'self' https://fonts.gstatic.com; connect-src 'self' https:; frame-src 'self'; block-all-mixed-content; upgrade-insecure-requests;"
+        }
+      ]
+    }
+  ]
 }
