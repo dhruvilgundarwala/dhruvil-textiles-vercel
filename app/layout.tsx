@@ -33,7 +33,7 @@ export default function RootLayout({
     <html lang="en" className={`${dmSans.variable} ${playfair.variable} antialiased selection:bg-secondary selection:text-white`}>
       <body className="font-sans bg-background text-foreground tracking-wide overflow-x-hidden">
         {children}
-        {/* FloatingWhatsApp component will be rendered here */}
+        <FloatingWhatsApp />
       </body>
     </html>
   );

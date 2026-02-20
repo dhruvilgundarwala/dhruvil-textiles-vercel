@@ -1,7 +1,7 @@
 import { MetadataRoute } from "next";
 
 export default function sitemap(): MetadataRoute.Sitemap {
-    const baseUrl = "https://dhruviltextiles.com"; // Placeholder domain
+    const baseUrl = "https://dhruvil-textiles-vercel.vercel.app";
 
     return [
         {

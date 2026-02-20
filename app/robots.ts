@@ -7,6 +7,6 @@ export default function robots(): MetadataRoute.Robots {
             allow: "/",
             disallow: "/private/",
         },
-        sitemap: "https://dhruviltextiles.com/sitemap.xml", // Placeholder domain
+        sitemap: "https://dhruvil-textiles-vercel.vercel.app/sitemap.xml",
     };
 }
