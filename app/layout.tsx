@@ -1,8 +1,9 @@
-import type { Metadata } from "next"; // [RESTORE] Missing import
+import type { Metadata } from "next";
 import { DM_Sans, Playfair_Display } from "next/font/google";
 import "./globals.css";
+import { Providers } from "./Providers";
 
-const dmSans = DM_Sans({ // [NEW] Configure DM Sans
+const dmSans = DM_Sans({
   variable: "--font-dm-sans",
   subsets: ["latin"],
   display: "swap",
@@ -22,8 +23,6 @@ export const metadata: Metadata = {
   description: "Dhruvil Textiles: Leading manufacturer of high-quality Bullet Dori, Cotton Thread, and Polyester Yarns in Surat since 2008. Export-quality manufacturing.",
 };
 
-import { FloatingWhatsApp } from "@/components/ui/FloatingWhatsApp";
-
 export default function RootLayout({
   children,
 }: Readonly<{
@@ -32,8 +31,7 @@ export default function RootLayout({
   return (
     <html lang="en" className={`${dmSans.variable} ${playfair.variable} antialiased selection:bg-secondary selection:text-white`}>
       <body className="font-sans bg-background text-foreground tracking-wide overflow-x-hidden">
-        {children}
-        <FloatingWhatsApp />
+        <Providers>{children}</Providers>
       </body>
     </html>
   );
