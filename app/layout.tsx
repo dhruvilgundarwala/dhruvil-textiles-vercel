@@ -3,6 +3,7 @@ import { DM_Sans, Playfair_Display } from "next/font/google";
 import "./globals.css";
 import { Providers } from "./Providers";
 import { siteConfig } from "@/config/site";
+import { Analytics } from "@vercel/analytics/next";
 
 const dmSans = DM_Sans({
   variable: "--font-dm-sans",
@@ -58,6 +59,7 @@ export default function RootLayout({
     <html lang="en" className={`${dmSans.variable} ${playfair.variable} antialiased selection:bg-secondary selection:text-white`} suppressHydrationWarning>
       <body className="font-sans bg-background text-foreground tracking-wide overflow-x-hidden">
         <Providers>{children}</Providers>
+        <Analytics />
       </body>
     </html>
   );
